@@ -7,4 +7,6 @@
 * JSONArray Decoding
 * Decoding Nested Objects
 * Decoding Dates Using custom Formattter
+* Decoding Enum Types
+** include in DecodingNestedObjects File
 
