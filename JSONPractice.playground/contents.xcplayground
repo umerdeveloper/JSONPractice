@@ -8,5 +8,8 @@
         <page name='IntermediateJSON'/>
         <page name='DecodingNestedObject'/>
         <page name='DecodingDates'/>
+        <page name='DecodingArbitraryTypes'/>
+        <page name='DecodingInheritedTypes'/>
+        <page name='DecodingFromDifferentTypesOfValues'/>
     </pages>
 </playground>

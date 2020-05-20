@@ -37,10 +37,4 @@ decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
 let jsonResponse = try decoder.decode(DateStruct.self, from: json)
 jsonResponse.dateCreated
 
-
-
-
-
-
-
 //: [Next](@next)

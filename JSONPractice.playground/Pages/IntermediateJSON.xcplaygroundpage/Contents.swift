@@ -24,18 +24,18 @@ struct Place: Decodable {
     let visited:    Bool
     
     private enum CodingKeys: String, CodingKey {
-        case name
-        case latitude
-        case longitude
-        case visited
+        case        name
+        case        latitude
+        case        longitude
+        case        visited
     }
     
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.latitude = try container.decode(Double.self, forKey: .latitude)
-        self.longitude = try container.decode(Double.self, forKey: .longitude)
-        self.visited = try container.decode(Bool.self, forKey: .visited)
+        let container   = try decoder.container(keyedBy: CodingKeys.self)
+        self.name       = try container.decode(String.self, forKey: .name)
+        self.latitude   = try container.decode(Double.self, forKey: .latitude)
+        self.longitude  = try container.decode(Double.self, forKey: .longitude)
+        self.visited    = try container.decode(Bool.self, forKey: .visited)
     }
 }
 
