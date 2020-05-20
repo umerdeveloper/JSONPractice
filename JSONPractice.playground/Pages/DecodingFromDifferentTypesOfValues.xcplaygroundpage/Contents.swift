@@ -11,27 +11,35 @@ struct Value: Decodable {
     }
     
     init(from decoder: Decoder) throws {
+        
         if let container = try? decoder.container(keyedBy: CodingKeys.self) {
+            
             self.value1 = try container.decode(Int.self, forKey: .value1)
             self.value2 = try container.decode(Int.self, forKey: .value2)
         }
         else if var container = try? decoder.unkeyedContainer() {
+            
             self.value1 = try container.decode(Int.self)
             self.value2 = try container.decode(Int.self)
         }
         else if let container = try? decoder.singleValueContainer() {
+            
             let string = try container.decode(String.self)
             let values = string.components(separatedBy: ",")
             
             guard values.count == 2,
+                
                 let value1 = Int(values[0]),
                 let value2 = Int(values[1]) else {
+                    
                     throw DecodingError.dataCorruptedError(in: container, debugDescription: "Unable to decode")
             }
+            
             self.value1 = value1
             self.value2 = value2
         }
         else {
+            
             let context = DecodingError.Context.init(codingPath: decoder.codingPath, debugDescription: "Unable to decode")
             throw DecodingError.dataCorrupted(context)
         }

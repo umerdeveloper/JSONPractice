@@ -11,5 +11,6 @@
         <page name='DecodingArbitraryTypes'/>
         <page name='DecodingInheritedTypes'/>
         <page name='DecodingFromDifferentTypesOfValues'/>
+        <page name='CustomEncoding'/>
     </pages>
 </playground>
